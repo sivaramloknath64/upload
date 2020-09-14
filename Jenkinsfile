@@ -1,6 +1,17 @@
 pipeline {
 	agent any
 	stages {
+		
+		stage('Clean Workspace'){
+      steps {
+        cleanWs()
+      }
+    }
+		
+		
+		
+		
+		
 		stage('nugget restore'){
 			steps{
 				 echo "nugget restoring packages"
@@ -12,7 +23,7 @@ pipeline {
     					steps {
                                         echo " building "
 						
-						bat "\"${tool 'MSBuild'}\" src/SmartStoreNet.sln /p:DeployOnBuild=true /p:DeleteExistingFiles=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\"  /p:publishUrl=c:\\int"
+						bat "\"${tool 'MSBuild'}\" src/SmartStoreNet.sln /p:DeployOnBuild=true  /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\"  /p:publishUrl=c:\\int"
 
 					}
 				}
