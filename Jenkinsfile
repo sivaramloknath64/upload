@@ -1,16 +1,7 @@
 pipeline {
 	agent any
 	stages {
-		
-		stage('Clean Workspace'){
-      steps {
-        cleanWs()
-      }
-    }
-		
-		
-		
-		
+	
 		
 		stage('nugget restore'){
 			steps{
