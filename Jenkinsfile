@@ -1,17 +1,20 @@
 pipeline {
 	agent any
 	stages {
-		stage('nugget restore'){
-			steps{
-				 echo "nugget restoring packages"
-		         	bat 'C:/tools/nuget.exe  restore  src/SmartStoreNet.sln'
-				
-					}
-				}
-				stage('Build') {
+		
+		
+		
+		
+		
+		
+		
+		
+				stage('Nugget Restore and bulding ') {
     					steps {
-                                        echo " building the project  "
-						bat "\"${tool 'MSBuild'}\" src/SmartStoreNet.sln / /t:clean /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" "
+                                        echo " Restoring and building the project   "
+						bat 'C:/tools/nuget.exe  restore  src/SmartStoreNet.sln'
+						bat "\"${tool 'MSBuild'}\" src/SmartStoreNet.sln /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" /p:DeleteExistingFiles=True /p:publishUrl=c:\\iis"
+
 
 
 
