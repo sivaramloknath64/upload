@@ -1,31 +1,23 @@
-
 pipeline {
-agent any
-environment {
-dotnet ="C:\Program Files\dotnet\dotnet.exe"
-}
-stages {
+	agent any
+	stages {
+		stage('nugget restore'){
+			steps{
+				 echo "nugget restoring packages"
+		         	bat 'C:/tools/nuget.exe  restore  src/SmartStoreNet.sln'
+				
+					}
+				}
+				stage('Build') {
+    					steps {
+                                        echo " building the project  "
+						bat "\"${tool 'MSBuild'}\" src/SmartStoreNet.sln /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" /p:DeleteExistingFiles=True /p:publishUrl=c:\\iis"
 
-stage ('Restore PACKAGES') {
-steps {
-bat "dotnet restore --configfile NuGet.Config"
-}
-}
-stage('Clean') {
-steps {
-bat 'dotnet clean'
-}
-}
-stage('Build') {
-steps {
-bat 'dotnet build --configuration Release'
-}
-}
-stage('Pack') {
-steps {
-bat 'dotnet pack --no-build --output nupkgs'
-}
+
+
+
+					}
+				}
+			}
 }
 
-}
-}
