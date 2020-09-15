@@ -2,6 +2,16 @@ pipeline {
 	agent any
 	stages {
 		
+		stage('cleaning the path'){
+		
+			steps{
+			
+			bat "\"${tool 'MSBuild'}\" /p:DeleteExistingFiles=True /p:publishUrl=c:\\iis"
+			}
+		
+			
+		}
+		
 		
 		stage('Nugget restore packages') {
 		
