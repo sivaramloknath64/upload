@@ -6,7 +6,7 @@ pipeline {
 		
 			steps{
 			
-			bat "\"${tool 'MSBuild'}\" /p:DeleteExistingFiles=True /p:publishUrl=c:\\iis"
+			bat "\"${tool 'MSBuild'}\" /p:DeleteExistingFiles=True /p:publishUrl=c:\\no"
 			}
 		
 			
