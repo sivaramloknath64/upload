@@ -16,7 +16,7 @@ pipeline {
     					steps {
                                         echo " building the project   "
 						bat 'C:/tools/nuget.exe  restore  src/SmartStoreNet.sln'
-						bat "\"${tool 'MSBuild'}\" src/SmartStoreNet.sln  /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\"  /p:publishUrl=c:\\iis"
+						bat "\"${tool 'MSBuild'}\" src/SmartStoreNet.sln  /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\"  /p:publishUrl=c:\\no"
 
 
 
