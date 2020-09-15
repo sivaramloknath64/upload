@@ -2,15 +2,6 @@ pipeline {
 	agent any
 	stages {
 		
-		stage('cleaning the path'){
-		
-			steps{
-			
-			sh "/p:DeleteExistingFiles=True /p:publishUrl=c:\\yes"
-			}
-		
-			
-		}
 		
 		
 		stage('Nugget restore packages') {
