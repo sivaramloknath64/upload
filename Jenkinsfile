@@ -6,7 +6,7 @@ pipeline {
 		
 			steps{
 			
-			bat " /p:DeleteExistingFiles=True /p:publishUrl=c:\\yes"
+			sh "/p:DeleteExistingFiles=True /p:publishUrl=c:\\yes"
 			}
 		
 			
@@ -22,7 +22,7 @@ pipeline {
 			}
 			
 			}
-				stage('bulding ') {
+				stage('building ') {
     					steps {
                                         echo " building the project   "
 						bat 'C:/tools/nuget.exe  restore  src/SmartStoreNet.sln'
