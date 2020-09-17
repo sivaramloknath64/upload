@@ -3,7 +3,7 @@
 
 	<Import Project="$(MSBuildProjectDirectory)\SmartStoreNET.Tasks.Targets"/>
 	
-	<Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" Condition="!$(Disable_CopyWebApplication) And '$(OutDir)' != '$(OutputPath)'">
+	<Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" Condition="'$(OutDir)' = '$(OutputPath)'">
 <ItemGroup>
 <RoslynFiles Include="$(CscToolPath)\*" />
 </ItemGroup>
