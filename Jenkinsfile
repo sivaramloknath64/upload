@@ -11,7 +11,7 @@ pipeline {
 				stage('Build') {
     					steps {
                                         echo " building "
-						bat "\"${tool 'MSBuild'}\" src/SmartStoreNet.sln /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" /p:AutoParameterizationWebConfigConnectionStrings=false /p:publishUrl=c:\\word"
+						bat "\"${tool 'MSBuild'}\" src/SmartStoreNet.sln /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\"  /p:publishUrl=c:\\word"
 
 
 
