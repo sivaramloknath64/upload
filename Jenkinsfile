@@ -6,7 +6,8 @@ pipeline {
 				stage('building ') {
     					steps {
                                         echo " building the project   "
-						bat "\"${tool 'MSBuild'}\" src/SmartStoreNet.sln  /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true  /t:build /p:Configuration=Release  /p:Platform=\"Any CPU\"  /p:publishUrl=c:\\try"
+						
+						bat "\"${tool 'MSBuild'}\" src/SmartstoreNet.sln /p:PublishUrl="'bin\Release\PublishOutput'" /p:DeployOnBuild=true /p:Configuration=Release /p:WebPublishMethod=FileSystem /p:DeployTarget=WebPublish /p:AutoParameterizationWebConfigConnectionStrings=false /p:SolutionDir="'c:\\cnc'"
 
 
 
@@ -16,4 +17,12 @@ pipeline {
 				}
 			}
 }
+
+
+
+
+
+
+
+
 
