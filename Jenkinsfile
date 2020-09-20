@@ -4,8 +4,17 @@ pipeline {
 		stage('nugget restore'){
 			steps{
 				 echo "nugget restoring packages"
-		         	bat 'build.bat'
+		         	bat 'C:/tools/nuget.exe  restore  src/SmartStoreNet.sln'
 				
+					}
+				}
+				stage('Build') {
+    					steps {
+                                        echo " building "
+						bat "\"${tool 'MSBuild'}\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /m  /p:DebugSymbols=false /p:DebugType=None /maxcpucount /p:Platform=\"Any CPU\"  /p:publishUrl=c:\\iis"
+ 
+
+
 					}
 				}
 			}
