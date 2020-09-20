@@ -12,7 +12,7 @@ pipeline {
     					steps {
                                         echo " building "
 
- bat "\"${tool 'MSBuild'}\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /m /p:DebugSymbols=false /p:DebugType=None /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build  /p:Platform=\"Any CPU\"  /p:publishUrl=c:\\iis"
+ bat "\"${tool 'MSBuild'}\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /m /p:DebugSymbols=false /p:DebugType=None /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:deploy  /p:Platform=\"Any CPU\"  /p:publishUrl=c:\\iis"
 
 
 					}
