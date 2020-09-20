@@ -2,13 +2,7 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
 
 	<Import Project="$(MSBuildProjectDirectory)\SmartStoreNET.Tasks.Targets"/>
-	
-	<Target Name="BeforeBuild">
-    <!-- Remove obj folder -->
-    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
-    </Target>
-<Target Name="AfterBuild">
-	</Target>	
+		
 
 
 </Project>
