@@ -3,6 +3,12 @@
 
 	<Import Project="$(MSBuildProjectDirectory)\SmartStoreNET.Tasks.Targets"/>
 	
+	<Target Name="BeforeBuild">
+    <!-- Remove obj folder -->
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
+    </Target>
+<Target Name="AfterBuild">
+	</Target>	
 
 
 </Project>
