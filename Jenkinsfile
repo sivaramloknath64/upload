@@ -11,7 +11,7 @@ pipeline {
 				stage('Build') {
     					steps {
                                         echo " building "
-bat "\"${tool 'v16'}\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /t:clean;build;package  /p:PackageFileName='C:/Users/sivaram loknath/.jenkins/workspace/Test'"
+bat "\"${tool 'v16'}\" /p:src/SmartStoreNet.sln /t:clean;build;package  /p:PackageFileName='C:/Users/sivaram loknath/.jenkins/workspace/Test'"
 
 
 
