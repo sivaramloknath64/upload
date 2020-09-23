@@ -17,5 +17,14 @@ bat "\"${tool 'v16'}\" src/smartstoreNet.sln /t:clean /t:build  "
 
 					}
 				}
+		
+		
+		stage('nugget restore'){
+			steps{
+				 echo "nugget restoring packages"
+		         	bat 'ClickToBuild.cmd'
+				
+					}
+				}
 			}
 }
