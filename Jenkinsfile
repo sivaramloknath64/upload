@@ -11,7 +11,7 @@ pipeline {
 				stage('Build') {
     					steps {
                                         echo " building "
-bat "\"${tool 'MSBuild'}\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /t:clean;build;package /p:PackageFileName='C:\Users\sivaram loknath\.jenkins\workspace\TestJenkins\TestJenkins.zip'"
+bat "\"${tool 'MSBuild'}\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /t:clean;build;package /p:PackageFileName='C:Users\sivaram loknath\.jenkins\workspace\TestJenkins\TestJenkins.zip'"
 
 
 
