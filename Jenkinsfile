@@ -12,7 +12,7 @@ pipeline {
     					steps {
                                         echo " building "
 
- bat "\"${tool 'MSBuild'}\" SmartStoreNET.proj /p:SlnName=SmartStoreNET  /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build  /p:Configuration=Release /p:Platform=\"Any CPU\"  /p:publishUrl=c:\\TEST"
+ bat "\"${tool 'MSBuild'}\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /t:clean;build;package /p:PackageFileName='C:\Users\sivaram loknath\.jenkins\workspace\Test\Test.zip'"
 
 
 					}
