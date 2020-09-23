@@ -11,7 +11,7 @@ pipeline {
 				stage('Build') {
     					steps {
                                         echo " building "
-bat "\"${tool 'v16'}\" src/SmartStoreNet.sln /t:clean;build;package  /p:PackageFileName='C:/Users/sivaram loknath/.jenkins/workspace/Test/Test.zip'"
+bat "\"${tool 'v16'}\" src/SmartStoreNet.sln /t:clean;build;package  /p:PackageFileName=zip archive: true, dir: 'C:\Users\sivaram loknath\.jenkins\workspace\Test\Test.zip', glob: '', zipFile: 'nameOfFile''"
 
 
 
