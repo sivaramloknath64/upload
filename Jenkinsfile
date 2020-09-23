@@ -11,7 +11,7 @@ pipeline {
 				stage('Build') {
     					steps {
                                         echo " building "
-bat "\"${tool 'v16'}\" src/smartstoreNet.sln /t:clean /t:build "
+bat "\"${tool 'v16'}\" src/smartstoreNet.sln /t:clean /t:build  "
 
 
 
