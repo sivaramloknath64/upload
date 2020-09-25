@@ -21,13 +21,12 @@ bat "\"${tool 'v16'}\" src/smartstoreNet.sln /t:clean /t:build /p:Configuration=
 		
 		stage('Deploy to iis'){
 			steps{
-				 echo "Deploying to iis "
-		         	bat "C:/Program Files (x86)/IIS/Microsoft Web Deploy V3/msdeploy.exe"
-				bat"-verb:sync" 
-				bat'-source:package="TestJenkins"'
-				bat'dest:contentPath="www.again.com"'
-				bat"computerName='localhost -allowUntrusted=true'"
-				
+				bat "Deploying to iis ""C:\Program Files\IIS\Microsoft Web Deploy V3\msdeploy.exe" `
+  -verb:sync `
+  -source:package=`"$package`" `
+  `-dest=auto,ComputerName=`"$compname`" `
+  `-setParam=name=`"$appname`",value=`"$appValue`" `
+  -allowUntrusted
 					}
 				}
 			}
