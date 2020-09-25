@@ -25,7 +25,7 @@ bat "\"${tool 'v16'}\" src/smartstoreNet.sln /t:clean /t:build /p:Configuration=
 		         	bat "C:/Program Files (x86)/IIS/Microsoft Web Deploy V3/msdeploy.exe"
 				"-verb:sync" 
 				'-source:package="TestJenkins"'
-				'dest:contentPath="www.again.com"',
+				'dest:contentPath="www.again.com"'
 				"computerName='localhost -allowUntrusted=true'"
 				
 					}
