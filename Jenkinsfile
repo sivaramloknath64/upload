@@ -22,7 +22,7 @@ bat "\"${tool 'v16'}\" src/smartstoreNet.sln /t:clean /t:build /p:Configuration=
 		stage('Deploy to iis'){
 			steps{
 				 echo "Deploying to iis "
-		         	bat "C:/"Program Files (x86)"/IIS/"Microsoft Web Deploy V3"/msdeploy.exe 
+		         	bat "C:/Program Files (x86)/IIS/Microsoft Web Deploy V3/msdeploy.exe"
 				-verb:sync 
 				-source:package="TestJenkins"
 				dest:contentPath="www.again.com",
