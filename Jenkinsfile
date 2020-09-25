@@ -11,7 +11,7 @@ pipeline {
 				stage('Build') {
     					steps {
                                         echo " building "
-bat "\"${tool 'v16'}\" src/smartstoreNet.sln /t:clean /t:build  "
+bat "\"${tool 'v16'}\" src/smartstoreNet.sln /t:clean /t:build /p:Configuration=Release /p:Platform=\"Any Cpu\" "
 
 
 
@@ -19,10 +19,10 @@ bat "\"${tool 'v16'}\" src/smartstoreNet.sln /t:clean /t:build  "
 				}
 		
 		
-		stage('build'){
+		stage('Deploy to iis'){
 			steps{
-				 echo "nugget restoring packages"
-		         	bat 'ClickToBuild'
+				 echo "Deploying to iis "
+		         	
 				
 					}
 				}
