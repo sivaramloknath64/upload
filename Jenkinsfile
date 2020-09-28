@@ -16,7 +16,7 @@ bat label: '', script: '''
 					 "\\"${tool \'MSBuild\'}\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /t:clean; t/:build t:/package /p:Platform=\"Any CPU\"/p:PackageFileName="C:\Users\sivaramloknath\.jenkins\workspace\TestJenkins\TestJenkins.zip  /p:Configuration=Release "
 
 '''
-
+}
 
 					}
 
@@ -36,5 +36,4 @@ dest:contentPath="www.again.com",computerName=localhost -allowUntrusted=true\'
 
 				}
 			}
-}
- 
+
