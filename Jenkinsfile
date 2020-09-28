@@ -32,16 +32,6 @@ pipeline {
           }
 		}
 
-		stage(" unzipping to publish build files"){
-          steps{
-             script{
-		    
-      unzip zipFile: 'build.zip', dir: '"C:/TEST"'
-
-             }
-          }
-		}
-
 		
 	
 	
