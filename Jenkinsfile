@@ -12,28 +12,29 @@ pipeline {
 				stage('Build') {
     					steps {
                                         echo " building "
-						bat label: '', script: '''
-\\"${tool \\\'v16\\\'}\\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /t:clean /:build /t:package /p:PackageFileName="C:\\Users\\sivaram  loknath\\.jenkins\\workspace\\TestJenkins\\TestJenkins.zip  /p:Configuration=Release
-'''
+						 bat "\"${tool 'v16'}\"  SmartStoreNET.proj /p:SlnName=SmartStoreNet /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" "
+    					}
+				}
+
+				stage('Build') {
+    					steps {
+                                        echo " building "
+						 bat "\"${tool 'v16'}\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /m /p:DebugSymbols=false /p:DebugType=None /maxcpucount "
+    					}
+				}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
+
 }
-
-					}
-
-
-		stage('deploy'){
-			steps{
-				 echo "deploy"
-				
-				bat label: '', script: '''\\\'C:\\"Program Files (x86)"\\IIS\\"Microsoft Web Deploy V3"\\msdeploy.exe -verb:sync -source:package="TestJenkins"
-dest:contentPath="www.again.com",computerName=localhost -allowUntrusted=true\\\'
-
-'''
-					}
-				}
-
-
-
-
-				}
-			}
-
