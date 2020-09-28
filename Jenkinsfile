@@ -30,7 +30,7 @@ pipeline {
                     zip archive: true, dir: 'C:/Users/sivaram loknath/.jenkins/workspace/Test/build/Web', glob: '', zipFile: 'build.zip'
              }
           }
-	
+		}
 	
 	
 	
