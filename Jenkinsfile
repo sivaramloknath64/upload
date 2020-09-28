@@ -8,26 +8,33 @@ pipeline {
 				
 					}
 				}
+
 				stage('Build') {
     					steps {
                                         echo " building "
-bat "\"${tool 'v16'}\" src/smartstoreNet.sln /t:clean /t:build /p:Configuration=Release /p:Platform=\"Any Cpu\" "
+bat label: '', script: '''
+					 "\\"${tool \'MSBuild\'}\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /t:clean; t/:build t:/package /p:Platform=\"Any CPU\"/p:PackageFileName="C:\Users\sivaramloknath\.jenkins\workspace\TestJenkins\TestJenkins.zip  /p:Configuration=Release "
+
+'''
 
 
+					}
 
+
+		stage('deploy'){
+			steps{
+				 echo "deploy"
+		         	bat label: '', script: ''' \'C:\"Program Files (x86)"\IIS\"Microsoft Web Deploy V3"\msdeploy.exe -verb:sync -source:package="TestJenkins"
+dest:contentPath="www.again.com",computerName=localhost -allowUntrusted=true\'
+
+'''				
 					}
 				}
-		
-		
-		stage('Deploy to iis'){
-			steps{
-				bat "Deploying to iis ""C:\Program Files\IIS\Microsoft Web Deploy V3\msdeploy.exe" `
-  -verb:sync `
-  -source:package=`"$package`" `
-  `-dest=auto,ComputerName=`"$compname`" `
-  `-setParam=name=`"$appname`",value=`"$appValue`" `
-  -allowUntrusted
-					}
+
+
+
+
 				}
 			}
 }
+ 
