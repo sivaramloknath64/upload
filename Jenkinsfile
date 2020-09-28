@@ -12,9 +12,8 @@ pipeline {
 				stage('Build') {
     					steps {
                                         echo " building "
-bat label: '', script: '''
-					 "\\"${tool \'MSBuild\'}\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /t:clean; t/:build t:/package /p:Platform=\"Any CPU\"/p:PackageFileName="C:\Users\sivaramloknath\.jenkins\workspace\TestJenkins\TestJenkins.zip  /p:Configuration=Release "
-
+						bat label: '', script: '''
+\\"${tool \\\'MSBuild\\\'}\\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /t:clean;build;package /p:PackageFileName="C:\\Users\\sivaram  loknath\\.jenkins\\workspace\\TestJenkins\\TestJenkins.zip  /p:Configuration=Release
 '''
 }
 
@@ -24,10 +23,11 @@ bat label: '', script: '''
 		stage('deploy'){
 			steps{
 				 echo "deploy"
-		         	bat label: '', script: ''' \'C:\"Program Files (x86)"\IIS\"Microsoft Web Deploy V3"\msdeploy.exe -verb:sync -source:package="TestJenkins"
-dest:contentPath="www.again.com",computerName=localhost -allowUntrusted=true\'
+				
+				bat label: '', script: '''\\\'C:\\"Program Files (x86)"\\IIS\\"Microsoft Web Deploy V3"\\msdeploy.exe -verb:sync -source:package="TestJenkins"
+dest:contentPath="www.again.com",computerName=localhost -allowUntrusted=true\\\'
 
-'''				
+'''
 					}
 				}
 
