@@ -27,7 +27,7 @@ pipeline {
 		stage(" zipping folder"){
           steps{
              script{
-                    zip archive: true, dir: 'C:\Users\sivaram loknath\.jenkins\workspace\Test\build\Web', glob: '', zipFile: 'build.zip'
+                    zip archive: true, dir: 'C:/Users/sivaram loknath/.jenkins/workspace/Test/build/Web', glob: '', zipFile: 'build.zip'
              }
           }
 	
