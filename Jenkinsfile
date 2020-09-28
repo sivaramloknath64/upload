@@ -22,14 +22,14 @@ pipeline {
 						 bat "\"${tool 'v16'}\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /m /p:DebugSymbols=false /p:DebugType=None /maxcpucount "
     					}
 				}
-
-	
-	
-	
-	
-	
-	
-	
+		
+		
+		stage(" zipping folder"){
+          steps{
+             script{
+                    zip archive: true, dir: 'C:\Users\sivaram loknath\.jenkins\workspace\Test\build\Web', glob: '', zipFile: 'build.zip'
+             }
+          }
 	
 	
 	
