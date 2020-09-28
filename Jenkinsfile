@@ -13,7 +13,7 @@ pipeline {
     					steps {
                                         echo " building "
 						bat label: '', script: '''
-\\"${tool \\\'MSBuild\\\'}\\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /t:clean;build;package /p:PackageFileName="C:\\Users\\sivaram  loknath\\.jenkins\\workspace\\TestJenkins\\TestJenkins.zip  /p:Configuration=Release
+\\"${tool \\\'v16\\\'}\\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /t:clean;build;package /p:PackageFileName="C:\\Users\\sivaram  loknath\\.jenkins\\workspace\\TestJenkins\\TestJenkins.zip  /p:Configuration=Release
 '''
 }
 
