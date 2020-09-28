@@ -16,9 +16,9 @@ pipeline {
     					}
 				}
 
-				stage('Build') {
+				stage('build files') {
     					steps {
-                                        echo " building "
+                                        echo " buildingg "
 						 bat "\"${tool 'v16'}\" SmartStoreNET.proj /p:SlnName=SmartStoreNET /m /p:DebugSymbols=false /p:DebugType=None /maxcpucount "
     					}
 				}
