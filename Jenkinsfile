@@ -19,11 +19,9 @@ pipeline {
 		stage('deploy') {
     					steps {
                                         echo " building "
-						 bat "\"${tool 'v16'}\" 
-"C:/Program Files/IIS/Microsoft Web Deploy V3/msdeploy.exe" "-verb=sync"
+						 bat "\"${tool 'v16'}\" 'C:/Program Files/IIS/Microsoft Web Deploy V3/msdeploy.exe' -verb=sync"			
 						
 						
-						"
     					}
 				}
 
